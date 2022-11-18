@@ -1,0 +1,4 @@
+Js2Py==0.74
+pony==0.7.16
+Scrapy==2.7.1
+selenium==4.6.0
