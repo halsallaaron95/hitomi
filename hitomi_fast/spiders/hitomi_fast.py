@@ -97,11 +97,11 @@ class HitomiFastSpider(scrapy.Spider):
         info_tags = info['tags'] or []
         for each in info_tags:
             if each.get('female', None):
-                tags.append(f'female:{each["tag"]}')
+                tags.append([each['tag'], 'female'])
             elif each.get('male', None):
-                tags.append(f'male:{each["tag"]}')
+                tags.append([each['tag'], 'male'])
             else:
-                tags.append(each['tag'])
+                tags.append([each['tag'], ''])
         tags = Gallery.dumps_list(tags)
         files = [x for x in info['files'] if x['hasavif']]
         # build the gallery object
